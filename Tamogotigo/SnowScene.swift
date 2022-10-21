@@ -95,6 +95,7 @@ class SnowScene: SKScene {
     func startDefeatedAnimation() {
         let defeatedAnimation = SKAction.animate(with: snowDefeatedTextures, timePerFrame: 0.05)
         
+        snow.removeAllActions()
         snow.run(defeatedAnimation)
     }
     

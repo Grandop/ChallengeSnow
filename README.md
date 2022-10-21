@@ -52,7 +52,7 @@ Woof!
 
 ### Bônus Points
 
-- Ao escolher qualquer botão de ação este deve ficar desativado por 3s após permitir que seja pressionado novamente. Leia o código e verá que já tem boa parte do caminho desenvolvida para conseguir fazer isso
+- Ao escolher qualquer botão de ação este deve ficar desativado por 3s, após permitir que seja pressionado novamente. Leia o código e verá que já tem boa parte do caminho desenvolvida para conseguir fazer isso
 
 ## Extras
 
