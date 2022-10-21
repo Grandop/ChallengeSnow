@@ -59,6 +59,9 @@
                                     <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="runButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G9Z-Jz-dnz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCP-vy-OV2">
                                 <rect key="frame" x="24" y="434" width="126" height="42"/>
@@ -72,6 +75,9 @@
                                     <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="barkButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hKP-gh-jM5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9Y-sb-cXX">
                                 <rect key="frame" x="24" y="374" width="126" height="42"/>
@@ -85,7 +91,17 @@
                                     <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="restButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fmE-gf-IOx"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1l-0Y-RlF">
+                                <rect key="frame" x="51" y="165" width="284" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -110,6 +126,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="barkButtonOutlet" destination="NCP-vy-OV2" id="8nV-nd-yxb"/>
+                        <outlet property="energyBar" destination="kcN-yQ-vJb" id="ckv-Xd-wu6"/>
+                        <outlet property="messageGameOver" destination="P1l-0Y-RlF" id="hRw-UQ-HA0"/>
+                        <outlet property="restButtonOutlet" destination="H9Y-sb-cXX" id="4kq-Cr-dQQ"/>
+                        <outlet property="runButtonOutlet" destination="a5a-tx-dfP" id="sBQ-Z3-EBV"/>
                         <outlet property="snowView" destination="3eE-gF-YsN" id="dkM-u0-rdC"/>
                     </connections>
                 </viewController>

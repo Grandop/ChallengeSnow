@@ -15,6 +15,7 @@
 		C18B4193290202EB00C03584 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C18B4191290202EB00C03584 /* LaunchScreen.storyboard */; };
 		C18B419B290203C800C03584 /* SnowScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18B419A290203C800C03584 /* SnowScene.swift */; };
 		C1F6A14C2902D0D10001BDC9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C1F6A14B2902D0D10001BDC9 /* README.md */; };
+		F680955829030BEC00562A03 /* snowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F680955729030BEC00562A03 /* snowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C18B4194290202EB00C03584 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C18B419A290203C800C03584 /* SnowScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowScene.swift; sourceTree = "<group>"; };
 		C1F6A14B2902D0D10001BDC9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		F680955729030BEC00562A03 /* snowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = snowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				C18B4186290202E900C03584 /* AppDelegate.swift */,
 				C18B4188290202E900C03584 /* SceneDelegate.swift */,
 				C18B418A290202E900C03584 /* ViewController.swift */,
+				F680955729030BEC00562A03 /* snowController.swift */,
 				C18B419A290203C800C03584 /* SnowScene.swift */,
 				C18B418C290202E900C03584 /* Main.storyboard */,
 				C18B418F290202EB00C03584 /* Assets.xcassets */,
@@ -149,6 +152,7 @@
 				C18B4187290202E900C03584 /* AppDelegate.swift in Sources */,
 				C18B4189290202E900C03584 /* SceneDelegate.swift in Sources */,
 				C18B419B290203C800C03584 /* SnowScene.swift in Sources */,
+				F680955829030BEC00562A03 /* snowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
