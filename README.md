@@ -1,8 +1,8 @@
 #  Desafio Tamogotigo
 
-<center>
+<p align="center">
 <img src="./snow.png" width="200px" height="auto" />
-</center>
+</p>
 
 ---
 
@@ -14,9 +14,9 @@ No desafio de hoje você terá que implementar meu app, e eu que vou te guiar co
 
 Ele tem a seguinte aparência:
 
-<center>
+<p align="center">
 <img src="./Tamogotigo.png" width="400px" height="auto" />
-</center>
+</p>
 
 No meu app eu posso:
 
