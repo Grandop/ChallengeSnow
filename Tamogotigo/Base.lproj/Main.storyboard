@@ -102,6 +102,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ql2-a2-ZE6">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJK-D8-c1U">
+                                <rect key="frame" x="75" y="656" width="240" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="39"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Restart"/>
+                                <connections>
+                                    <action selector="restartButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yKB-ew-Vqd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -128,8 +144,10 @@
                     <connections>
                         <outlet property="barkButtonOutlet" destination="NCP-vy-OV2" id="8nV-nd-yxb"/>
                         <outlet property="energyBar" destination="kcN-yQ-vJb" id="ckv-Xd-wu6"/>
+                        <outlet property="gameOverView" destination="Ql2-a2-ZE6" id="I26-G1-3cI"/>
                         <outlet property="messageGameOver" destination="P1l-0Y-RlF" id="hRw-UQ-HA0"/>
                         <outlet property="restButtonOutlet" destination="H9Y-sb-cXX" id="4kq-Cr-dQQ"/>
+                        <outlet property="restartButton" destination="SJK-D8-c1U" id="vXZ-z7-RHL"/>
                         <outlet property="runButtonOutlet" destination="a5a-tx-dfP" id="sBQ-Z3-EBV"/>
                         <outlet property="snowView" destination="3eE-gF-YsN" id="dkM-u0-rdC"/>
                     </connections>

@@ -15,25 +15,29 @@ class ViewController: UIViewController {
     @IBOutlet weak var energyBar: UIProgressView!
     @IBOutlet weak var snowView: SKView!
     @IBOutlet weak var messageGameOver: UILabel!
-    
-    
+        
     @IBOutlet weak var restButtonOutlet: UIButton!
     @IBOutlet weak var barkButtonOutlet: UIButton!
     @IBOutlet weak var runButtonOutlet: UIButton!
-
+    
+    @IBOutlet weak var restartButton: UIButton!
+    
+    @IBOutlet weak var gameOverView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        restartButton.isHidden = true
+        gameOverView.isHidden = true
         snowScene = SnowScene(size: CGSize(width: snowView.frame.size.width, height: snowView.frame.size.height))
         snowView.presentScene(snowScene)
         messageGameOver.text = ""
         upateEnergyBar()
     }
 
-    
     func snowRun() {
-        runButtonOutlet.isEnabled = false
+        disableAllButtons()
+        
         if snow.isAlive {
             snow.decreaseEnergy(newEnergy: 25)
             upateEnergyBar()
@@ -41,19 +45,21 @@ class ViewController: UIViewController {
         }
         
         if !snow.isAlive {
+            restButtonOutlet.isEnabled = false
+            barkButtonOutlet.isEnabled = false
+            runButtonOutlet.isEnabled = false
             snowDefeated()
         }
+        
+            // resetando a animação do snow para idle após 3 segundos
+        resetTimerAnimations()
+        
 
-        // resetando a animação do snow para idle após 3 segundos
-        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { timer in
-            self.runButtonOutlet.isEnabled = true
-            
-            self.snowScene?.startIdleAnimation()
-        }
     }
     
     func snowBark() {
-        barkButtonOutlet.isEnabled = false
+        disableAllButtons()
+        
         if snow.isAlive {
             snow.decreaseEnergy(newEnergy: 10)
             upateEnergyBar()
@@ -67,10 +73,8 @@ class ViewController: UIViewController {
         
         
         // resetando a animação do snow para idle após 3 segundos
-        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { timer in
-            self.barkButtonOutlet.isEnabled = true
-            self.snowScene?.startIdleAnimation()
-        }
+        resetTimerAnimations()
+        
     }
     
     
@@ -81,9 +85,8 @@ class ViewController: UIViewController {
             messageGameOver.text = "Game Over!"
             messageGameOver.font = UIFont(name: "Arial-boldMT", size: 40)
             messageGameOver.textColor = UIColor.purple
-            restButtonOutlet.isEnabled = false
-            barkButtonOutlet.isEnabled = false
-            runButtonOutlet.isEnabled = false
+            
+            
         }
         
         
@@ -91,7 +94,8 @@ class ViewController: UIViewController {
     }
     
     func snowSit() {
-        restButtonOutlet.isEnabled = false
+        disableAllButtons()
+        
         if snow.isAlive {
             snow.addEnergy(newEnergy: 25)
             upateEnergyBar()
@@ -103,11 +107,8 @@ class ViewController: UIViewController {
         }
         
         // resetando a animação do snow para idle após 3 segundos
-        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { timer in
-            self.restButtonOutlet.isEnabled = true
-            self.snowScene?.startIdleAnimation()
-
-        }
+        resetTimerAnimations()
+        
     }
     
     // só escondendo a status bar
@@ -117,7 +118,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func restButton(_ sender: UIButton) {
-        
         snowSit()
     }
     
@@ -131,6 +131,46 @@ class ViewController: UIViewController {
     
     func upateEnergyBar() {
         energyBar.progress = snow.energy / 100
+    }
+    
+    func disableAllButtons() {
+        restButtonOutlet.isEnabled = false
+        barkButtonOutlet.isEnabled = false
+        runButtonOutlet.isEnabled = false
+    }
+    
+    func enableAllButtons() {
+        restButtonOutlet.isEnabled = true
+        barkButtonOutlet.isEnabled = true
+        runButtonOutlet.isEnabled = true
+    }
+    
+    func resetTimerAnimations() {
+        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { timer in
+            self.resetTimerAnimationsNow()
+        }
+    }
+    
+    func resetTimerAnimationsNow() {
+        if self.snow.isAlive {
+            self.enableAllButtons()
+            self.snowScene?.startIdleAnimation()
+        } else {
+            self.gameOverView.isHidden = false
+            self.restartButton.isHidden = false
+        }
+
+    }
+        
+    
+    @IBAction func restartButtonAction(_ sender: UIButton) {
+        self.gameOverView.isHidden = true
+        sender.isHidden = true
+        self.snow.energy = 100
+        self.snow.isAlive = true
+        messageGameOver.text = ""
+        resetTimerAnimationsNow()
+        upateEnergyBar()
     }
     
     
