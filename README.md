@@ -1,5 +1,10 @@
 #  Desafio Tamogotigo
 
+Preview do App:
+
+https://user-images.githubusercontent.com/104664138/226367102-eb8d6fce-6871-4308-8d5d-14ddbbad5bd9.mp4
+
+
 <p align="center">
 <img src="./snow.png" width="200px" height="auto" />
 </p>
